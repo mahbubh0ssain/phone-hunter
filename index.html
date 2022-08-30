@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phone Hunter IO</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1 class="mt-4 mb-4 text-center text-warning">
+      My Phone
+      <span class="bg-success px-2 py-1 text-white rounded">Hunter</span>
+    </h1>
+    <!-- display cards of mobiles  -->
+    <main class="container">
+      <!-- search bar   -->
+      <div class="input-group mb-3 w-50 mx-auto">
+        <input
+          id="input-field"
+          type="text"
+          class="form-control"
+          placeholder="Search by phone name"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+        >
+          Search
+        </button>
+      </div>
+      <!-- no search found  -->
+      <div class="text-center mt-3 mb-3 text-warning d-none" id="no-phone">
+        <h4>No search found !</h4>
+      </div>
+      <!-- spinner  -->
+      <div id="spinner" class="d-flex justify-content-center d-none">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <!-- main div  -->
+      <div id="mobile-cards" class="row row-cols-1 row-cols-md-4 g-4"></div>
+      <!-- error text  -->
+      <div class="text-center mt-4 mb-4 d-none" id="show-all">
+        <!-- show all btn  -->
+        <button class="btn btn-primary">Show All</button>
+      </div>
+    </main>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="phoneDetailModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div id="modal-dialog" class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="exampleModalLabel"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div id="modal-body" class="modal-body"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
